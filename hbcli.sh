@@ -1,6 +1,7 @@
 #!/bin/bash
 infile=$1
-outfile=$HOME/Video/`basename $infile .mkv`.MiniSD-xiaoyong.mkv
+ext=${infile##*.}
+outfile=$HOME/Video/`basename $infile .$ext`.MiniSD-xiaoyong.mkv
 codeset=CP936
 
 if [ -z $infile ]; then
