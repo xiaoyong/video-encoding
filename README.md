@@ -9,7 +9,7 @@ Some useful scripts for video encoding jobs.
 Supported Formats
 -----------------
 
-* MiniSD proposed by The Last Fantasy (TLF), see [doc](/video-encoding/doc/) for details 
+* MiniSD proposed by The Last Fantasy (TLF), see [doc](video-encoding/doc/) for details 
 
 Prerequisites
 --------------
