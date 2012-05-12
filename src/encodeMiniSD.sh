@@ -38,12 +38,15 @@ srtfiles=${srtfiles:1}
 srtencoding=${srtencoding:1}
 srtlangs=${srtlangs:1}
 
-cmd="HandBrakeCLI -i $infile -o $outfile $MiniSD --srt-file $srtfiles --srt-codeset $srtencoding --srt-lang $srtlangs --srt-default --subtitle 1,2,3,4,5,6,7,8,9,10 --subtitle-default"
+cmd="HandBrakeCLI -i $infile -o $outfile $MiniSD --srt-file $srtfiles --srt-codeset $srtencoding --srt-lang $srtlangs --srt-default 1 --subtitle 1,2,3,4,5,6,7,8,9,10 --subtitle-default 1"
 echo $cmd
 
-read -p "Proceed? [Y|n] " answer
-if [[ "$answer" == "n" || "$answer" == "no" ]]; then
-	exit
-else
-	$cmd
+if [ "$2" == "-i" ]; then
+	read -p "Proceed? [Y|n] " answer
+	answer=`echo $answer | tr '[A-Z]' '[a-z]'`
+	if [ "${answer:0:1}" == "n" ]; then
+		exit
+	fi
 fi
+
+$cmd

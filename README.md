@@ -20,4 +20,6 @@ Prerequisites
 Usage
 ------
 
-	$ src/encodeMiniSD.sh video_file_name # To encode in MiniSD format
+	# To encode in MiniSD format
+	$ src/encodeMiniSD.sh video_file_name # Non-interactively
+	$ src/encodeMiniSD.sh video_file_name -i # Interactively
