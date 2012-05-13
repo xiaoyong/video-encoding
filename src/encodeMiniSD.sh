@@ -2,7 +2,7 @@
 infile=$1
 ext=${infile##*.}
 outfile=$HOME/Video/`basename $infile .$ext`.MiniSD-xiaoyong.mkv
-codeset=CP936
+codeset=UTF-8
 
 if [ -z $infile ]; then
 	echo "Usage: $0 film_file_name"
@@ -26,7 +26,7 @@ Bstring=${Bstring:1}
 # MiniSD settings based on normal preset:
 MiniSD="-e x264 -b 1000 -2 -T -a $astring -E $Estring -B $Bstring -f mkv -X 800 --loose-anamorphic -m -x deblock=-1,-1:ref=13:bframes=8:subme=9"
 
-for srtfile in `dirname $infile`/`basename $infile .mkv`.{chs,eng,chs\&eng}.srt; do
+for srtfile in `dirname $infile`/`basename $infile .mkv`.{chs,eng,chs\&eng,eng\&chs}.srt; do
 	if [ -f $srtfile ]; then
 		srtfiles=$srtfiles,$srtfile
 		srtencoding=$srtencoding,$codeset
