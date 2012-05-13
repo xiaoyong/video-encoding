@@ -30,7 +30,7 @@ fi
 # Normal preset:
 # ./HandBrakeCLI -i DVD -o ~/Movies/movie.mp4  -e x264 -q 20.0 -a 1 -E faac -B 160 -6 dpl2 -R Auto -D 0.0 -f mp4 --strict-anamorphic -m -x ref=2:bframes=2:subme=6:mixed-refs=0:weightb=0:8x8dct=0:trellis=0
 # MiniSD settings based on normal preset:
-MiniSD="-e x264 -b 1000 -2 -T $audiosetting -f mkv -X 800 --loose-anamorphic -m -x deblock=-1,-1:ref=13:bframes=8:subme=9"
+MiniSD="-e x264 -b 1000 -2 -T $audiosetting -f mkv -X 848 --loose-anamorphic -m -x deblock=-1,-1:ref=13:bframes=8:subme=9"
 
 for srtfile in `dirname $infile`/`basename $infile .mkv`.{chs,eng,chs\&eng,eng\&chs}.srt; do
 	if [ -f $srtfile ]; then
