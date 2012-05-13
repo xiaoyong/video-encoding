@@ -14,7 +14,7 @@ n_audio=`HandBrakeCLI -i $infile --scan 2>&1 | grep  -E "Stream.*Audio" | wc -l`
 for ((i=1; i<=n_audio; i++)); do
 	astring=$astring,$i
 	Estring=$Estring,"faac"
-	Bstring=$Bstring,64
+	Bstring=$Bstring,160
 done
 
 astring=${astring:1}
