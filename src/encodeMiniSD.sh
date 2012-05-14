@@ -36,7 +36,7 @@ for srtfile in `dirname $infile`/`basename $infile .mkv`.{chs,eng,chs\&eng,eng\&
 	if [ -f $srtfile ]; then
 		srtfiles=$srtfiles,$srtfile
 		srtencoding=$srtencoding,$codeset
-		srtlang=`echo $srtfile | grep -oE 'chs|eng|chs&eng'`
+		srtlang=`echo $srtfile | grep -oE 'chs|eng|chs&eng|eng&chs'`
 		srtlangs=$srtlangs,${srtlang/chs/chi} # In iso639-2 code, Chinese is chi / zho
 	fi
 done
